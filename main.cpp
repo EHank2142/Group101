@@ -1,4 +1,4 @@
-//
+//前面不用管，直接跳到Line84
 //gcc ncurses-1.c -o a.out -lncurses
 #include <ncurses.h>
 #include <string.h>
