@@ -61,6 +61,8 @@ int main()
     getmaxyx(stdscr, scrLine, scrCol);       // 获取标准屏幕的行/列数
     //move(scrLine / 2 - 1, scrCol / 2 - 1);   // 将光标移至屏幕中央
     //printw("Hello World!");
+
+    //The title of our game is "Roulette" 我们的游戲名爲「輪盤賭」
     mvprintw(scrLine / 2 - 5, scrCol / 2 - 31, "__________                .__             __     __           ");
     mvprintw(scrLine / 2 - 4, scrCol / 2 - 31, "\\______   \\  ____   __ __ |  |    ____  _/  |_ _/  |_   ____  ");
     mvprintw(scrLine / 2 - 3, scrCol / 2 - 31, " |       _/ /  _ \\ |  |  \\|  |  _/ __ \\ \\   __\\   __\\_/ __ \\ ");
