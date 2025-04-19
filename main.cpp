@@ -1,4 +1,4 @@
-//
+//请直接跳到116行
 //gcc ncurses-1.c -o a.out -lncurses
 #include <ncurses.h>
 #include <string.h>
@@ -113,7 +113,7 @@ int main()
     print(scrLine, scrCol, my_energy, ai_energy); // 渲染初始界面
     std::this_thread::sleep_for(std::chrono::seconds(1));
 
-//玩家操作（84-144行）， 你把这部分代码按自己的想法重新写一遍也可以， 我把输出改了就行
+//玩家操作（116-176行）， 你把这部分代码按自己的想法重新写一遍也可以， 我把输出改了就行
 //
 // User input for gun direction (Towards left (you) or right (AI) )
 
