@@ -1,4 +1,4 @@
-//前面不用管，直接跳到Line84
+//
 //gcc ncurses-1.c -o a.out -lncurses
 #include <ncurses.h>
 #include <string.h>
@@ -28,7 +28,7 @@ void smileface(int scrLine, int scrCol){
 void gunright(int scrLine, int scrCol){
     mvprintw(scrLine / 2 -3, scrCol / 2 - 28, "                     ________________________________, ");
     mvprintw(scrLine / 2 -2, scrCol / 2 - 28, "'===-----...__  __,-""  ]____[ _.----------,__________|");
-    mvprintw(scrLine / 2 -1, scrCol / 2 - 28, "|             ""   /___________)||||||||||||)_)        ");
+    mvprintw(scrLine / 2 -1, scrCol / 2 - 28, "|             ""   /___________)||||||||||||)_)         ");
     mvprintw(scrLine / 2 , scrCol / 2 - 28,   "|                `-'(( ]        '----------`           ");
     mvprintw(scrLine / 2 +1, scrCol / 2 - 28, "|  ___...--,_  `    ''                                 ");
     mvprintw(scrLine / 2 +2, scrCol / 2 - 28, "'''          \\`                                        ");
@@ -47,12 +47,44 @@ void gunleft(int scrLine, int scrCol){
     refresh();
 }
 
+void energy(int scrLine, int scrCol, int my_energy, int ai_energy){
+    for(int i = 0; i < my_energy; i++){
+        mvprintw(scrLine / 2 -10, scrCol /4 - 16 + 8*i,"  /|   ");
+        mvprintw(scrLine / 2 -9, scrCol /4 - 16 + 8*i," / |___");
+        mvprintw(scrLine / 2 -8, scrCol /4 - 16 + 8*i,"/__   /");
+        mvprintw(scrLine / 2 -7, scrCol /4 - 16 + 8*i,"   | / ");
+        mvprintw(scrLine / 2 -6, scrCol /4 - 16 + 8*i,"   |/  ");
+    }
+    mvprintw(scrLine / 2 - 12, scrCol /4 - 10,"Your energy left: ");
+    for(int i = 0; i < ai_energy; i++){
+        mvprintw(scrLine / 2 -10, scrCol /4 * 3 - 16 + 8*i,"  /|   ");
+        mvprintw(scrLine / 2 -9, scrCol /4 * 3 - 16 + 8*i," / |___");
+        mvprintw(scrLine / 2 -8, scrCol /4 * 3 - 16 + 8*i,"/__   /");
+        mvprintw(scrLine / 2 -7, scrCol /4 * 3 - 16 + 8*i,"   | / ");
+        mvprintw(scrLine / 2 -6, scrCol /4 * 3 - 16 + 8*i,"   |/  ");
+    }
+    mvprintw(scrLine / 2 - 12, scrCol /4 * 3 - 10,"Computer's energy left: ");
+}
+   
+
+void print(int scrLine, int scrCol, int my_energy, int ai_energy){
+    smileface(scrLine, scrCol); // 显示笑脸
+    mvprintw(scrLine /2 , scrCol / 4 - 11, "YOU");
+    mvprintw(scrLine /2 , scrCol / 4 * 3 + 8, "COMPUTER");
+    energy(scrLine, scrCol, my_energy, ai_energy); // 显示生命值
+    refresh();
+}
+
+
+// 渲染
 
 int main()
 {
-    int scrLine, scrCol;
+    int scrLine, scrCol; // 获取屏幕 行 列 数
+    int my_energy = 4, ai_energy = 4; // 初始生命值为 4
     char str[1024];
 
+//设置渲染画面
     initscr();
     raw();
     noecho();
@@ -61,8 +93,6 @@ int main()
     getmaxyx(stdscr, scrLine, scrCol);       // 获取标准屏幕的行/列数
     //move(scrLine / 2 - 1, scrCol / 2 - 1);   // 将光标移至屏幕中央
     //printw("Hello World!");
-
-    //The title of our game is "Roulette" 我们的游戲名爲「輪盤賭」
     mvprintw(scrLine / 2 - 5, scrCol / 2 - 31, "__________                .__             __     __           ");
     mvprintw(scrLine / 2 - 4, scrCol / 2 - 31, "\\______   \\  ____   __ __ |  |    ____  _/  |_ _/  |_   ____  ");
     mvprintw(scrLine / 2 - 3, scrCol / 2 - 31, " |       _/ /  _ \\ |  |  \\|  |  _/ __ \\ \\   __\\   __\\_/ __ \\ ");
@@ -80,7 +110,7 @@ int main()
     clear();
     refresh();
 
-    smileface(scrLine, scrCol);
+    print(scrLine, scrCol, my_energy, ai_energy); // 渲染初始界面
     std::this_thread::sleep_for(std::chrono::seconds(1));
 
 //玩家操作（84-144行）， 你把这部分代码按自己的想法重新写一遍也可以， 我把输出改了就行
