@@ -1,0 +1,36 @@
+#include <stdlib.h>
+#include <ctime>
+bool chamber[6];
+int currentchamber=0;
+int accuracy[]={100,80,60,40,20,0}
+int numbullets=2
+//枪里几发子弹
+
+void loadbullets(numbullets){
+  srand(time(0));
+  for(int i=0;i<6;i++){
+    chamber[i]=false;
+  int bulletsloaded=0;
+  while(bulletsloaded<numbullets){
+    int randompos=rand()%6;
+    if(!chamber[randompos]){
+      chamber[randompos]=true;
+      bulletsloaded++;
+    }
+  }
+  }
+}
+
+bool ai(){
+  //true打对方 false打自己
+  int random=rand()%100;
+  int accuracy=accuracy[currentchamber];
+  if(random>=accuracy){
+    return chamber[currentchamber];
+  }
+  else{
+    return (!chamber[currentchamber]);
+  }
+}
+  
+
