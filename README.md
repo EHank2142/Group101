@@ -3,9 +3,13 @@ COMP2113ENGG1340 Group Project
 
 TO RUN THE PROGRAMME, PLEASE EXECUTE: 
 
+_____________________________________
+
 $ g++ -o main main.cpp -lncurses
 
 $ ./main
+
+_____________________________________
 
 This is definately avaible on SSH cs.hku.hk server.
 
