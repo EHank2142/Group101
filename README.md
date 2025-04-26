@@ -11,7 +11,7 @@ $ ./main
 
 _____________________________________
 
-This is definately avaible on SSH cs.hku.hk server.
+This programme is definitely availabe to run on SSH cs.hku.hk server.
 
 (If you are running this programme in your own local environment, it may prompt error, as your environment may not be equipped with ncurse.)
 
