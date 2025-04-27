@@ -22,7 +22,7 @@ int EasyAI() {
     nowSpot+=1;
     return 0;
   }
-} //doesn't use DoubleDamItem or ChainItem strategically
+} //doesn't use DoubleDamItem or ChainItem
 
 
   
