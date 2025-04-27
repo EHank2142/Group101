@@ -1,5 +1,5 @@
 int EasyAI(){
-    useHealItem(0); //Use HealItem if available
+useHealItem(0); //Use HealItem if available
   if (useNextBulletItem(0)){ //Use NextBulletItem if available
 		if (isNextBullet()){ //Shoot player if next bullet is real
 			if (useDoubleDamItem(0)){ // Use DoubleDamItem if available
