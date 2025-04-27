@@ -1,81 +1,40 @@
-#include <stdlib.h>
-#include <ctime>
-bool chamber[6];
-int currentchamber=0;
-int numbullets=2
-//枪里几发子弹
 
-void loadbullets(numbullets){
-  srand(time(0));
-  for(int i=0;i<6;i++){
-    chamber[i]=false;
-  int bulletsloaded=0;
-  while(bulletsloaded<numbullets){
-    int randompos=rand()%6;
-    if(!chamber[randompos]){
-      chamber[randompos]=true;
-      bulletsloaded++;
+int HardAI(){
+    int accuracy[] = {100, 100, 100, 100, 100, 100, 100, 100, 100};
+    int random = rand() % 100;
+    int currentaccuracy = accuracy[nowSpot];
+    bool shoot;
+    if(random < currentaccuracy) {
+        shoot=isNextBullet();
+    } else {
+        shoot!=isNextBullet();
     }
-  }
-  }
-}
-
-// AI code here to move the gun towards the player and shoot
-
-bool ai(scrLine, scrCol, &my_energy, &ai_energy, &currentchamber){
-  int accuracy[]={100,80,60,40,20,0}
-  int random=rand()%100;
-  int accuracy=accuracy[currentchamber];
-  if(random<=accuracy){
-    shoot=chamber[currentchamber];
-  }
-  else{
-    shoot=!chamber[currentchamber];
-  }
-
-  if(shoot){
-    //打玩家
-    gunleft(scrLine,scrCol);
-    if(chamber[currentchamber]){
-      my_energy--;
-      mvprintw(scrLine/2 + 6, scrCol/2 - 10, "BANG! You were shot!");
-      currentchamber++;
-      return true;
-      //AI打玩家，AI继续
+    if(shoot){
+        if(isNextBullet()){
+            gunleft(); // gun to left, shoot player.
+            std::this_thread::sleep_for(std::chrono::milliseconds(200));
+            Damage(1,1);
+            std::this_thread::sleep_for(std::chrono::milliseconds(200));
+            return(1); //打中玩家继续回合
+        }
+        else{
+            nowSpot++;
+            std::this_thread::sleep_for(std::chrono::milliseconds(300));
+            return 0;
+        }
     }
     else{
-      mvprintw(scrLine/2 + 6, scrCol/2 - 10, "CLICK! Blank round");
-      currentchamber++;
-      return false;
-    }
-  }
-  
-  else{
-    gunright(scrLine,scrCol);
-    if(chamber[currentchamber]){
-    ai_energy--;
-    mvprintw(scrLine/2 + 6, scrCol/2 - 10, "BANG! AI shot itself!");
-    currentchamber++;
-    return false;
-    //AI打自己，回到玩家回合
-    }
-    else{
-      mvprintw(scrLine/2 + 6, scrCol/2 - 10, "CLICK! Blank round");
-      currentchamber++;
-      return true;
-      //空子弹打自己，继续回合
+        if(isNextBullet()){
+            gunright(); // gun to right, shoot AI.
+            std::this_thread::sleep_for(std::chrono::milliseconds(200));
+            Damage(0,1);
+            std::this_thread::sleep_for(std::chrono::milliseconds(200));
+            return 0;
+        }
+        else{
+            nowSpot++;
+            std::this_thread::sleep_for(std::chrono::milliseconds(300));
+            return 1;
+        }
     }
 }
-
-int main(){
-  bool AIturn = true;
-  while(AIturn && ai_energy > 0 && my_energy > 0) {
-    AIturn = ai_turn(scrLine, scrCol, my_energy, ai_energy,currentchamber);
-    refresh();
-    std::this_thread::sleep_for(std::chrono::seconds(2));
-}
-  
-
-    
-
-
