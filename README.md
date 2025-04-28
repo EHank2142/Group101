@@ -6,7 +6,7 @@ TO RUN THE PROGRAMME, PLEASE EXECUTE:
 _____________________________________
 
 $ g++ -o main main.cpp -lncurses
-
+//Make Sure Your Terminal Size Is Sufficient
 $ ./main
 
 _____________________________________
