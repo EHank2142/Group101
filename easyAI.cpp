@@ -1,59 +1,53 @@
-int EasyAI(){
-	useHealItem(0); //Use HealItem if available
-	if (useNextBulletItem(0)){ //Use NextBulletItem if available
-		if (isNextBullet()){ //Shoot player if next bullet is real
-			if (useDoubleDamItem(0)){ // Use DoubleDamItem if available
-				gunleft();
-				Damage(1,2);
-			}
-			else {
-				gunleft();
-				Damage(1,1);
-			}
-			return 1;
+int easyAI() {
+	int randomItemToUse = rand() % 4;
+	switch(randomItemToUse) { //use a random weapon
+		case 0: useNextBulletItem(0); break;
+		case 1: useDoubleDamItem(0); break;
+		case 2: useChainItem(0); break;
+		case 3: useHealItem(0); break;
+	}
+
+	if (useNextBulletItem(0)) {
+		if (isNextBullet()) {
+			Damage(1, 1);
+			return 1; //shoot player
 		}
-		else { //Next bullet not real so AI shoots itself
-			nowSpot +=1;
+		else {
+			nowSpot += 1;
 			return 1;
 		}
 	}
-	else {
-		if (useDoubleDamItem(0)){ // Use DoubleDamItem on player if available
-			gunleft();
-			if (isNextBullet()){
-				Damage(1,2);
-				return 1;
-			}
-			else {
-				nowSpot+=1;
-				return 0;
-			}
+	
+	if (Probability() < 0.5) { //shoot itself
+		if (isNextBullet()) {
+			Damage(0, 1);
+			return 0;
 		}
 		else {
-			if (useChainItem(0)){ //use ChainItem if available 
-				if (isNextBullet()){
-					gunleft();
-					Damage(1,1);
-					return 1;
-				}
-				else {
-					nowSpot+=1;
-					return 1;
-				}
+			nowSpot += 1;
+			return 1;
+		}
+	}
+	else { //shoot player
+		if (isNextBullet()) {
+			if (useDoubleDamItem(0)) {
+				Damage(1, 2);
 			}
-			else { //AI shoots itself if it has no items
-				if (isNextBullet()){
-					gunright();
-					Damage(0,1);
-					return 0;
-				}
-				else {
-					nowSpot+=1;
-					return 1;
-				}
+			else {
+				Damage (1, 1);
 			}
+			return 1;
+		}
+		else {
+			nowSpot += 1;
+			return 0; //chance return to player
 		}
 	}
 }
+		
+
+
+
+	
   
 
