@@ -31,7 +31,6 @@ int easyAI() {
 				return 1; //skips player's turn
 			else
 				return 0; //back to player's turn
-			return 0;
 		}
 		else {
 			nowSpot += 1;
@@ -41,10 +40,10 @@ int easyAI() {
 	else { //shoot player
 		if (isNextBullet()) {
 			if (UsedDoubleDamage) {
-				Damage(1, 2);
+				Damage(1, 2); //double damage
 			}
 			else {
-				Damage (1, 1);
+				Damage (1, 1); //normal damage
 			}
 			return 1;
 		}
