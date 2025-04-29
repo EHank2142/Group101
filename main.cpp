@@ -1206,7 +1206,7 @@ int main(){
                 //cout << "You win!";
                 DrawBullet(MaxChamber-nowSpot);
                 Printtest(0);
-                mvprintw(scrLine / 2 -4, scrCol / 2 - 10, "                ");
+                centerclear(scrLine / 2 -4);
                 mvprintw(scrLine / 2 -4, scrCol / 2 - 10, "YOU WIN!");
                 refresh();
                 std::this_thread::sleep_for(std::chrono::milliseconds(1000));
@@ -1216,7 +1216,9 @@ int main(){
                 std::this_thread::sleep_for(std::chrono::milliseconds(1000));
                 mvprintw(scrLine / 2 -4, scrCol / 2 - 14, "We have a surprise for you!");
                 refresh();
-                continuefunc(scrLine + 2, 0);
+                continuefunc(scrLine / 2 + 2, 0);
+                clear();
+
                 int starttxt = 1;
                 int endtxt = 21;
 
@@ -1229,9 +1231,9 @@ int main(){
                         starttxt = 19;
                         endtxt = 19;
                     }
-                    for (int i = starttxt; i <= endtxt; ++i) {
+                    for (int iii = starttxt; iii <= endtxt; ++iii) {
                         // Specify the path to the file
-                        std::string filePath = "txt/t" + std::to_string(i) + ".txt";
+                        std::string filePath = "txt/t" + std::to_string(iii) + ".txt";
                         
                         // Create an ifstream object to read from the file
                         std::ifstream inputFile(filePath);
@@ -1248,11 +1250,11 @@ int main(){
                         
                         // Read from the file
                         std::string line;
-                        int j = 0;
+                        int jj = 0;
                         while (std::getline(inputFile, line)) {
-                            mvprintw(scrLine / 2 - 17 + j, scrCol/ 2 - 25, line.c_str());
+                            mvprintw(scrLine / 2 - 17 + jj, scrCol/ 2 - 25, line.c_str());
                             refresh();
-                            j++;
+                            jj++;
                         }
 
                         
@@ -1261,7 +1263,7 @@ int main(){
                         std::this_thread::sleep_for(std::chrono::milliseconds(200));
                     }
                 }
-                std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+                std::this_thread::sleep_for(std::chrono::milliseconds(1000));
                 clear();
                 mvprintw(scrLine / 2 , scrCol/ 2 - 16,"Thank you for playing our game!");
                 mvprintw(scrLine / 2 + 6 , scrCol/ 2 - 13,"Press [ANY KEY] to quit...");
@@ -1274,7 +1276,7 @@ int main(){
                 //cout  << "You lose!";
                 
                 Printtest(0);
-                mvprintw(scrLine / 2 -4, scrCol / 2 - 5, "                ");
+                centerclear(scrLine / 2 -4);
                 mvprintw(scrLine / 2 -4, scrCol / 2 - 5, "YOU LOSE!");
                 refresh();
                 std::this_thread::sleep_for(std::chrono::milliseconds(1000));
