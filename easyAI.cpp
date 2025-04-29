@@ -6,6 +6,7 @@ int easyAI() {
 		case 0: 
 			if (useNextBulletItem(0)) {
 				if (isNextBullet()) {
+					gunleftt();
 					Damage(1, 1);
 					return 1; //shoot player
 				}
@@ -30,6 +31,7 @@ int easyAI() {
 	
 	if (Probability() < 0.5) { //shoot itself
 		if (isNextBullet()) {
+			gunright();
 			Damage(0, 1);
 			if (UsedChainDamage) {
 				return 1; //skips player's turn
@@ -45,6 +47,7 @@ int easyAI() {
 	}
 	else { //shoot player
 		if (isNextBullet()) {
+			gunleft();
 			if (UsedDoubleDamage) {
 				Damage(1, 2); //double damage
 			}
