@@ -55,10 +55,12 @@ int easyAI() {
 		}
 		else {
 			nowSpot += 1;
-			if (UsedChainDamage) 
+			if (UsedChainDamage) {
 				return 1; //skips player's turn
-			else
+			}
+			else {
 				return 0; //back to player's turn
+			}
 		}
 	}
 }
