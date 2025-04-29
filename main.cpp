@@ -4,6 +4,8 @@
 #include <string.h>
 #include <thread>    // Include for std::this_thread::sleep_for
 #include <chrono>
+#include <fstream>
+#include <string>
 using namespace std;
 
 // 0 for AI(COMPUTER), 1 dor HUMAN
