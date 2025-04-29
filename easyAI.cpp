@@ -15,22 +15,28 @@ int easyAI() {
 				}
 			}
 			break;
-		case 1: useDoubleDamItem(0); 
+		case 1: 
+			useDoubleDamItem(0); 
 			UsedDoubleDamage = true;
 			break;
-		case 2: useChainItem(0); 
+		case 2: 
+			useChainItem(0); 
 			UsedChainItem = true;
 			break;
-		case 3: useHealItem(0); break;
+		case 3: 
+			useHealItem(0); 
+			break;
 	}
 	
 	if (Probability() < 0.5) { //shoot itself
 		if (isNextBullet()) {
 			Damage(0, 1);
-			if (UsedChainDamage) 
+			if (UsedChainDamage) {
 				return 1; //skips player's turn
-			else
+			}
+			else{
 				return 0; //back to player's turn
+			}
 		}
 		else {
 			nowSpot += 1;
