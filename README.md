@@ -15,7 +15,7 @@ $ ./main
 
 _____________________________________
 
-This programme is definitely availabe to be run on cs.hku.hk server.
+This programme is varified to be successfully compiled in the Computer Science department's academy server (academy11.cs.hku.hk or academy21.cs.hku.hk).
 
 (If you are running this programme in your own local environment, it may prompt error, as your environment may not be equipped with ncurse. Please Make Sure Your Terminal Size Is Sufficient)
 
