@@ -1233,7 +1233,7 @@ int main(){
                     }
                     for (int iii = starttxt; iii <= endtxt; ++iii) {
                         // Specify the path to the file
-                        std::string filePath = "txt/t" + std::to_string(iii) + ".txt";
+                        std::string filePath = "cxk/t" + std::to_string(iii) + ".txt";
                         
                         // Create an ifstream object to read from the file
                         std::ifstream inputFile(filePath);
