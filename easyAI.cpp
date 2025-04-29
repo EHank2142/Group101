@@ -7,7 +7,7 @@ int easyAI() {
 			if (useNextBulletItem(0)) {
 				if (isNextBullet()) {
 					Damage(1, 1);
-					return 1; //shoot plater
+					return 1; //shoot player
 				}
 				else {
 					nowSpot += 1;
@@ -28,9 +28,9 @@ int easyAI() {
 		if (isNextBullet()) {
 			Damage(0, 1);
 			if (UsedChainDamage) 
-				return 1; //skips player turn
+				return 1; //skips player's turn
 			else
-				return 0; //back to player
+				return 0; //back to player's turn
 			return 0;
 		}
 		else {
@@ -51,9 +51,9 @@ int easyAI() {
 		else {
 			nowSpot += 1;
 			if (UsedChainDamage) 
-				return 1; //skips player turn
+				return 1; //skips player's turn
 			else
-				return 0; //player's turn
+				return 0; //back to player's turn
 		}
 	}
 }
