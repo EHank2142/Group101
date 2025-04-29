@@ -30,7 +30,7 @@ int easyAI() {
 	}
 	else { //shoot player
 		if (isNextBullet()) {
-			if (useDoubleDamItem(0)) {
+			if (case 2) {
 				Damage(1, 2);
 			}
 			else {
