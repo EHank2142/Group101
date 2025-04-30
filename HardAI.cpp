@@ -9,11 +9,19 @@ int HardAI(){
     } else {
         shoot!=isNextBullet();
     }
+    //use tools when bot has it
+    useChainItem(0);
+    useHealItem(0);
     if(shoot){
         if(isNextBullet()){
             gunleft(); // gun to left, shoot player.
             std::this_thread::sleep_for(std::chrono::milliseconds(200));
-            Damage(1,1);
+            if(useNextBulletItem(0)){
+                Damage(1,2);
+            }
+            else{
+                Damage(1,1);
+            }
             std::this_thread::sleep_for(std::chrono::milliseconds(200));
             return(1); //打中玩家继续回合
         }
