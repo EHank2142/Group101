@@ -324,7 +324,7 @@ void IntroductionPaper(){
     continuefunc(scrLine / 2 + 6, 0);
     centerclear(msg);
 
-    mvprintw(msg, scrCol / 2 - 40, "However, there are some FAKE bullets loaded in the gun, which casue no damage.");
+    mvprintw(msg, scrCol / 2 - 40, "However, there are some FAKE bullets loaded in the gun, which cause no damage.");
     refresh();
     continuefunc(scrLine / 2 + 6, 0); 
     centerclear(msg);
