@@ -1,6 +1,7 @@
+// int HardAI() made by Lu Ho Tin
 
 int HardAI(){
-    int accuracy[] = {100, 100, 100, 100, 100, 100, 100, 100, 100};
+    int accuracy[] = {100, 90, 80, 70, 60, 50, 50, 50, 50};
     int random = rand() % 100;
     int currentaccuracy = accuracy[nowSpot];
     bool shoot;
@@ -10,13 +11,17 @@ int HardAI(){
         shoot!=isNextBullet();
     }
     //use tools when bot has it
-    useChainItem(0);
+    if(useChainItem(0)){
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+    }
     useHealItem(0);
+    std::this_thread::sleep_for(std::chrono::milliseconds(200));
     if(shoot){
         if(isNextBullet()){
             gunleft(); // gun to left, shoot player.
             std::this_thread::sleep_for(std::chrono::milliseconds(200));
-            if(useNextBulletItem(0)){
+            if(useDoubleDamItem(0)){
+                std::this_thread::sleep_for(std::chrono::milliseconds(200));
                 Damage(1,2);
             }
             else{
