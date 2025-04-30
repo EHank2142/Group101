@@ -806,8 +806,9 @@ int easyAI() {
 	}
 }
 // int HardAI() made by Lu Ho Tin
+
 int HardAI(){
-    int accuracy[] = {100, 100, 100, 100, 100, 100, 100, 100, 100};
+    int accuracy[] = {100, 90, 80, 70, 60, 50, 50, 50, 50};
     int random = rand() % 100;
     int currentaccuracy = accuracy[nowSpot];
     bool shoot;
@@ -816,38 +817,48 @@ int HardAI(){
     } else {
         shoot!=isNextBullet();
     }
+    //use tools when bot has it
+    if(useChainItem(0)){
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+    }
+    useHealItem(0);
+    std::this_thread::sleep_for(std::chrono::milliseconds(200));
     if(shoot){
-        gunleft(); // gun to left, shoot player.
         if(isNextBullet()){
-            Real();
-            Damage(1,1);
+            gunleft(); // gun to left, shoot player.
             std::this_thread::sleep_for(std::chrono::milliseconds(200));
-            return 1; //打中玩家继续回合
+            if(useDoubleDamItem(0)){
+                std::this_thread::sleep_for(std::chrono::milliseconds(200));
+                Damage(1,2);
+            }
+            else{
+                Damage(1,1);
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(200));
+            return(1); //打中玩家继续回合
         }
         else{
-            Fake();
             nowSpot++;
             std::this_thread::sleep_for(std::chrono::milliseconds(300));
             return 0;
         }
     }
     else{
-        gunright(); // gun to right, shoot AI.
         if(isNextBullet()){
-            Real();
+            gunright(); // gun to right, shoot AI.
             std::this_thread::sleep_for(std::chrono::milliseconds(200));
             Damage(0,1);
             std::this_thread::sleep_for(std::chrono::milliseconds(200));
             return 0;
         }
         else{
-            Fake();
             nowSpot++;
             std::this_thread::sleep_for(std::chrono::milliseconds(300));
             return 1;
         }
     }
 }
+
 
 int Human(){
     char userInput;
