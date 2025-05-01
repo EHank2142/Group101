@@ -13,7 +13,7 @@ TO RUN THE PROGRAMME, PLEASE
 
 1. Download the files. (If you don't know how to download file, please refer to **How To Download Files.png** in this repository)
 
-2. Copy the directory **cxk** and file **main.cpp** to your cs.hku.hk server and put them in the same directory.
+2. Copy the directory **cxk** and file **main.cpp** to your cs.hku.hk server account directory and put them in the same directory.
 
 3. EXECUTE: 
 
