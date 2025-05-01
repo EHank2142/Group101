@@ -1,5 +1,22 @@
 # Group101
 COMP2113ENGG1340 Group Project
+Roulette: A Deadly Game of Chance
+Team Members: Liew Amanda Nicole Ann, Lu Ho Tin, Wu Ka Lok, Xu Yihang, Yap Ern Lynn, Zhang Yang
+
+**Game Description**
+Roulette is a strategic game where players face off against an AI bot in a deadly game of roulette. Players and their opponent take turns shooting and can take another shot if you miss on yourself or shoot the opponent. However, the gun is filled with both real and fake bullets and everything is randomized. Use your power-up items and probability calculations boost your chances and outsmart the AI opponent. Every shot could be your last...
+
+**Key Features**
+- Gun where players can strategically choose the chamber size (6-9 slots) and bullet count (2-5 bullets)
+- Power-up items:
+  1. Sharp Eye: Shows if the next bullet is real or fake
+  2. Double Damage: Next shot does 2 damage
+  3. Hand-Cuffs: Bans the opponent's next round
+  4. Heal: Heals 1 energy
+- Three Levels of Difficulties where the AI uses different strategies
+- Special suprise after beating AI
+
+_____________________________________
 
 TO RUN THE PROGRAMME, PLEASE
 
@@ -15,7 +32,7 @@ $ ./main
 
 _____________________________________
 
-This programme is varified to be successfully compiled in the Computer Science department's academy server (academy11.cs.hku.hk or academy21.cs.hku.hk).
+This programme is verified to be successfully compiled in the Computer Science department's academy server (academy11.cs.hku.hk or academy21.cs.hku.hk).
 
 (If you are running this programme in your own local environment, it may prompt error, as your environment may not be equipped with ncurse. Please Make Sure Your Terminal Size Is Sufficient)
 
