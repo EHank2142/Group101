@@ -11,9 +11,11 @@ Everyone does make contribution, no free rider.
 
 TO RUN THE PROGRAMME, PLEASE
 
-1. Copy the directory 'cxk' and file 'main.cpp' to your cs.hku.hk server and put them in the same directory.
+1. Download the files. (If you don't down how to download file, please refer to _How To Download Files.png_ in this repository)
 
-2. EXECUTE: 
+2. Copy the directory _cxk_ and file _main.cpp_ to your cs.hku.hk server and put them in the same directory.
+
+3. EXECUTE: 
 
 _____________________________________
 
