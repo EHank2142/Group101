@@ -5,8 +5,6 @@ COMP2113ENGG1340 Group Project
 
 Team Members: Liew Amanda Nicole Ann, Lu Ho Tin, Wu Ka Lok, Xu Yihang, Yap Ern Lynn, Zhang Yang
 
-_____________________________________
-
 TO RUN THE PROGRAMME, PLEASE
 
 1. Copy the directory 'cxk' and file 'main.cpp' to your cs.hku.hk server and put them in the same directory.
@@ -21,14 +19,9 @@ $ ./main
 
 _____________________________________
 
-
-_____________________________________
-
 **Game Description**
 
 Roulette is a strategic game where players face off against an AI bot in a deadly game of roulette. Players and their opponent take turns shooting and can take another shot if you miss on yourself or shoot the opponent. However, the gun is filled with both real and fake bullets and everything is randomized. Use your power-up items and probability calculations boost your chances and outsmart the AI opponent. Every shot could be your last...
-
-_____________________________________
 
 **Key Features**
 - Gun where players can strategically choose the chamber size (6-9 slots) and bullet count (2-5 bullets)
