@@ -5,6 +5,22 @@ COMP2113ENGG1340 Group Project
 
 Team Members: Liew Amanda Nicole Ann, Lu Ho Tin, Wu Ka Lok, Xu Yihang, Yap Ern Lynn, Zhang Yang
 
+_____________________________________
+
+TO RUN THE PROGRAMME, PLEASE
+
+1. Copy the directory 'cxk' and file 'main.cpp' to your cs.hku.hk server and put them in the same directory.
+
+2. EXECUTE: 
+
+_____________________________________
+
+$ g++ -o main main.cpp -lncurses
+
+$ ./main
+
+_____________________________________
+
 
 _____________________________________
 
@@ -23,22 +39,6 @@ _____________________________________
   4. Heal: Heals 1 energy
 - Three Levels of Difficulties where the AI uses different strategies
 - Special suprise after beating AI
-
-_____________________________________
-
-TO RUN THE PROGRAMME, PLEASE
-
-1. Copy the directory 'cxk' and file 'main.cpp' to your cs.hku.hk server and put them in the same directory.
-
-2. EXECUTE: 
-
-_____________________________________
-
-$ g++ -o main main.cpp -lncurses
-
-$ ./main
-
-_____________________________________
 
 This programme is verified to be successfully compiled in the Computer Science department's academy server (academy11.cs.hku.hk or academy21.cs.hku.hk).
 
