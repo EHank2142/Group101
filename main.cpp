@@ -204,7 +204,7 @@ void DrawItem(){
     mvprintw(scrLine / 2 + 13, scrCol/ 4 * 3 + 9, "Sharp Eye      %d",Players[0].items[1]);
     mvprintw(scrLine / 2 + 14, scrCol/ 4 * 3 + 9, "Double Damage  %d",Players[0].items[2]);
     mvprintw(scrLine / 2 + 15, scrCol/ 4 * 3 + 9, "Chain          %d",Players[0].items[3]);
-    mvprintw(scrLine / 2 + 16, scrCol/ 4 * 3 + 9, "Healing        %d",Players[0].items[4]);
+    mvprintw(scrLine / 2 + 16, scrCol/ 4 * 3 + 9, "Recharge       %d",Players[0].items[4]);
 
     refresh();
 }
@@ -302,11 +302,18 @@ void IntroductionPaper(){
     mvprintw(msg - 1, scrCol / 2 - 25, "<- You sit at the leftside of the table");
     mvprintw(msg + 1, scrCol / 2 - 10, "Your opponent sit at the rightside ->");
     refresh();
-    std::this_thread::sleep_for(std::chrono::milliseconds(400));
-    mvprintw(msg + 4, scrCol / 2 - 25, "Each of you have 5 energy points at the beginning.");
-    std::this_thread::sleep_for(std::chrono::milliseconds(400));
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
     energy(5,5);
-    refresh();
+    for (int i = 0; i < 3; i++){
+        move(scrLine / 2 -13,0);
+        clrtoeol();
+        refresh();
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+        mvprintw(scrLine / 2 -13, scrCol / 2 - 25, "Each of you have 5 energy points at the beginning.");
+        refresh();
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+    }
+    std::this_thread::sleep_for(std::chrono::milliseconds(400));
     continuefunc(scrLine / 2 + 6, 400);
 
     smileface();
@@ -391,8 +398,8 @@ void IntroductionPaper(){
     }
 
     mvprintw(msg , scrCol / 2 - 10, "In this game,");
-    mvprintw(msg +2, scrCol / 2 - 36, "You will have chance to choose the chamber with size ranges from 6 to 9,");
-    mvprintw(msg +4, scrCol / 2 - 25, "as well as the number of REAL bullets in the chamber.");
+    mvprintw(msg +2, scrCol / 2 - 36, "You will have chance to choose the chamber with size ranges from 6 to 8,");
+    mvprintw(msg +4, scrCol / 2 - 30, "as well as the number of REAL bullets (2-4) in the chamber.");
     refresh();
     continuefunc(scrLine / 2 + 6, 0); 
 
@@ -517,7 +524,7 @@ bool useHealItem(int Code){ //Checks whether Players[Code] has HealItems and use
             mvprintw(msg, scrCol / 2 - 16, "Your opponent has Recharged. (4)");
         }
         refresh();
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         centerclear(msg);
         if (Code == 1){
             for (int i = 0; i < 3; i++){
@@ -554,7 +561,7 @@ bool useDoubleDamItem(int Code){ //Checks whether Players[Code] has DoubleDamIte
             mvprintw(msg, scrCol / 2 - 23, "Your opponent has used Double Damage Item. (2)");
         }
         refresh();
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1500));
         centerclear(msg);
         return true;
     }
@@ -572,7 +579,7 @@ bool useChainItem(int Code){ //Checks whether Players[Code] has ChainItem
             mvprintw(msg, scrCol / 2 - 18, "Your opponent Ban you a round. (3)");
         }
         refresh();
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1500));
         centerclear(msg);
         return true;
     }
@@ -590,7 +597,7 @@ bool useNextBulletItem(int Code){ //Checks whether Players[Code] has NextBulletI
             mvprintw(msg, scrCol / 2 - 19, "Your opponent has used Sharp Eye. (1)");
         }
         refresh();
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1500));
         centerclear(msg);
         return true;
     }
@@ -1015,11 +1022,11 @@ int Human(){
 void ChangeChamber(){ //Player choose their own Chamber Size and Bullet Number
 //Choose Chamber Size
     centerclear(msg);
-    mvprintw(msg, scrCol / 2 - 15, "Choose Chamber Size (6-9):");
+    mvprintw(msg, scrCol / 2 - 15, "Choose Chamber Size (6-8):");
     refresh();
 	int temp = getch()-'0';
 
-    while(temp<6 || temp>9){
+    while(temp<6 || temp>8){
         if (temp == 'i' || temp == 'I'){
             IntroductionPaper();
         }
@@ -1036,15 +1043,15 @@ void ChangeChamber(){ //Player choose their own Chamber Size and Bullet Number
                 refresh();
                 std::this_thread::sleep_for(std::chrono::milliseconds(200));
             }
-            mvprintw(msg, scrCol / 2 - 15, "Choose Chamber Size (6-9):");
+            mvprintw(msg, scrCol / 2 - 15, "Choose Chamber Size (6-8):");
             refresh();
         }
         temp = getch()-'0';
     }
-	if (temp>=6 && temp<=9){ //Min 6 and Max 9
+	if (temp>=6 && temp<=8){ //Min 6 and Max 9
 		MaxChamber = temp;
 		//cout << MaxChamber << endl;
-        mvprintw(msg, scrCol / 2 - 15, "Choose Chamber Size (6-9): %d", MaxChamber);
+        mvprintw(msg, scrCol / 2 - 15, "Choose Chamber Size (6-8): %d", MaxChamber);
         refresh();
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
         centerclear(msg);
@@ -1053,11 +1060,11 @@ void ChangeChamber(){ //Player choose their own Chamber Size and Bullet Number
 
 //Choose Bullets Number
     centerclear(msg);
-    mvprintw(msg, scrCol / 2 - 15, "Choose REAL Bullets Number (2-5):");
+    mvprintw(msg, scrCol / 2 - 15, "Choose REAL Bullets Number (2-4):");
     refresh();
 	temp = getch()-'0';
 
-    while(temp<2 || temp>5){
+    while(temp<2 || temp>4){
         centerclear(msg);
         for (int i = 0; i < 3; i++){//如果玩家按下无效键位，则闪烁三次提示语
             mvprintw(msg, scrCol / 2 - 4, "Invalid");
@@ -1067,15 +1074,15 @@ void ChangeChamber(){ //Player choose their own Chamber Size and Bullet Number
             refresh();
             std::this_thread::sleep_for(std::chrono::milliseconds(200));
         }
-        mvprintw(msg, scrCol / 2 - 15, "Choose REAL Bullets Number (2-5):");
+        mvprintw(msg, scrCol / 2 - 15, "Choose REAL Bullets Number (2-4):");
         refresh();
         temp = getch()-'0';
     }
 
-	if (temp>=2 && temp<=5){ //Min 2 and Max 5
+	if (temp>=2 && temp<=4){ //Min 2 and Max 4
 		Bullets = temp;
 		//cout << Bullets << endl;
-        mvprintw(msg, scrCol / 2 -15, "Choose REAL Bullets Number (2-5): %d", Bullets);
+        mvprintw(msg, scrCol / 2 -15, "Choose REAL Bullets Number (2-4): %d", Bullets);
         refresh();
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
         centerclear(msg);
@@ -1181,8 +1188,8 @@ int main(){
             while(Move!=0 && nowSpot<MaxChamber && nowBullet>0 && GameOver()){
                 if(Move==1)
                     //cout << "HUMAN:";
-                    mvprintw(scrLine / 2 -4, scrCol / 2 - 10, "                ");
-                    mvprintw(scrLine / 2 -4, scrCol / 2 - 10, "YOUR round");
+                    mvprintw(scrLine / 2 -4, scrCol / 2 - 5, "                ");
+                    mvprintw(scrLine / 2 -4, scrCol / 2 - 5, "YOUR round");
                     mvprintw(scrLine / 2 +6, scrCol / 4 * 3 + 11, "    ");
                     mvprintw(scrLine / 2 +7, scrCol / 4 * 3 + 11, "    ");
                     refresh();
@@ -1193,8 +1200,8 @@ int main(){
             Move=1;
             while(Move!=0 && nowSpot<MaxChamber && nowBullet>0 && GameOver()){
                 //cout << "AI:";
-                mvprintw(scrLine / 2 -4, scrCol / 2 - 10, "                ");
-                mvprintw(scrLine / 2 -4, scrCol / 2 - 10, "Bot's round");
+                mvprintw(scrLine / 2 -4, scrCol / 2 - 5, "                ");
+                mvprintw(scrLine / 2 -4, scrCol / 2 - 5, "Bot's round");
                 mvprintw(scrLine / 2 +6, scrCol / 4 - 15, "    ");
                 mvprintw(scrLine / 2 +7, scrCol / 4 - 15, "    ");
                 mvprintw(scrLine / 2 +6, scrCol / 4 * 3 + 11, " /\\ ");
@@ -1279,6 +1286,7 @@ int main(){
                 mvprintw(scrLine / 2 , scrCol/ 2 - 16,"Thank you for playing our game!");
                 mvprintw(scrLine / 2 + 6 , scrCol/ 2 - 13,"Press [ANY KEY] to quit...");
                 refresh();
+                std::this_thread::sleep_for(std::chrono::milliseconds(1000));
                 getch();
                 endwin();
                 return 1;
@@ -1292,7 +1300,7 @@ int main(){
                 refresh();
                 std::this_thread::sleep_for(std::chrono::milliseconds(1000));
                 clear();
-                mvprintw(scrLine / 2 -4, scrCol / 2 - 5, "YOU LOSE!");
+                mvprintw(scrLine / 2 - 4, scrCol / 2 - 5, "YOU LOSE!");
                 refresh();
                 mvprintw(scrLine / 2 - 2, scrCol / 2 - 25, "However if you win, you will receive a surprise!");
                 std::this_thread::sleep_for(std::chrono::milliseconds(1000));
