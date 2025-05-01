@@ -808,7 +808,7 @@ int easyAI() {
 // int HardAI() made by Lu Ho Tin
 
 int HardAI(){
-    int accuracy[] = {100, 95, 85, 75, 65, 60, 50, 50, 50};
+    int accuracy[] = {100, 95, 90, 85, 80, 75, 70, 65, 60};
     int random = rand() % 100;
     int currentaccuracy = accuracy[nowSpot];
     bool shoot;
