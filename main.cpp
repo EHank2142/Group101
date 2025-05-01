@@ -344,8 +344,8 @@ void IntroductionPaper(){
     continuefunc(scrLine / 2 + 6, 0); 
     centerclear(msg);
 
-    mvprintw(msg, scrCol / 2 - 40, "If you shoot your opponet with real bullet or shoot yourself with fake bullet,");
-    mvprintw(msg + 2, scrCol / 2 - 30, "you will win this round and take the next round.");
+    mvprintw(msg, scrCol / 2 - 40, "If you shoot your opponent with real bullet or shoot yourself with fake bullet,");
+    mvprintw(msg + 2, scrCol / 2 - 30, "You will win this round and take the next round.");
     refresh();
     continuefunc(scrLine / 2 + 6, 0); 
     centerclear(msg+1);
