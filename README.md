@@ -11,7 +11,7 @@ Everyone does make contribution, no free rider.
 
 TO RUN THE PROGRAMME, PLEASE
 
-1. Download the files. (If you don't down how to download file, please refer to _**How To Download Files.png**_ in this repository)
+1. Download the files. (If you don't know how to download file, please refer to _**How To Download Files.png**_ in this repository)
 
 2. Copy the directory _**cxk**_ and file _**main.cpp**_ to your cs.hku.hk server and put them in the same directory.
 
