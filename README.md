@@ -3,7 +3,7 @@
 
 COMP2113ENGG1340 Group Project
 
-Team Members: Liew Amanda Nicole Ann (3036440828), Lu Ho Tin (3036458825), Wu Ka Lok (3036293641), Xu Yihang(303638973), Yap Ern Lynn (3036441078), Zhang Yang(3036290766)
+Team Members: Liew Amanda Nicole Ann (3036440828), Lu Ho Tin (3036458825), Wu Ka Lok (3036293641), Xu Yihang(3036389737), Yap Ern Lynn (3036441078), Zhang Yang(3036290766)
 
 Everyone does make contribution, no free rider.
 
