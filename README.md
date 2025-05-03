@@ -39,6 +39,8 @@ Roulette is a strategic game where players face off against an AI bot in a deadl
 - Three Levels of Difficulties where the AI uses different strategies
 - Special suprise after beating AI
 
+
+
 This programme is verified to be successfully compiled in the Computer Science department's academy server (academy11.cs.hku.hk or academy21.cs.hku.hk).
 
 (If you are running this programme in your own local environment, it may prompt error, as your environment may not be equipped with ncurse. Please Make Sure Your Terminal Size Is Sufficient)
@@ -46,3 +48,10 @@ This programme is verified to be successfully compiled in the Computer Science d
 You are suggested to copy the file to your cs.hku.hk directory via FileZilla, and then use command prompt(cmd) / PowerShell to login your account via ssh. (Please see Module 0 if you don't know how to do https://moodle.hku.hk/course/section.php?id=1394825)
 
 Using HKU VPN is more likely to connect to cs.hku.hk server and FileZilla server.
+
+
+
+
+Demonstration video
+
+https://connecthkuhk-my.sharepoint.com/personal/u3644107_connect_hku_hk/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu3644107%5Fconnect%5Fhku%5Fhk%2FDocuments%2FENGG1340%20group101%2Emov&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E522fde3c%2D3f30%2D4fdb%2D8adf%2D4e92498e5db5
