@@ -54,4 +54,4 @@ Using HKU VPN is more likely to connect to cs.hku.hk server and FileZilla server
 
 Demonstration video
 
-https://connecthkuhk-my.sharepoint.com/personal/u3644107_connect_hku_hk/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu3644107%5Fconnect%5Fhku%5Fhk%2FDocuments%2FENGG1340%20group101%2Emov&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E522fde3c%2D3f30%2D4fdb%2D8adf%2D4e92498e5db5
+https://connecthkuhk-my.sharepoint.com/personal/u3644107_connect_hku_hk/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu3644107%5Fconnect%5Fhku%5Fhk%2FDocuments%2FENGG1340%20group101%2Emov&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E5f23b90b%2Ddcd6%2D4577%2Da1d0%2Df26f63457d26
